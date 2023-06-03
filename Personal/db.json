@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "position": "Mount",
+    "offense": true,
+    "defense": false,
+    "technique": "When in full mount we undejack their arm and transition to the arm triangle",
+    "date": "June 2nd",
+    "School": "Mallorca BJJ",
+    "teacher": "Joe",
+    "Gi": false,
+    "NoGi": true
+  },
+  {
+    "id": 2,
+    "position": "Half Guard",
+    "offense": true,
+    "defense": false,
+    "technique": "When in half guard we control the head, tripod and slide knee through to knee-slice",
+    "date": "June 3rd",
+    "school": "Mallorca BJJ",
+    "teacher": "Facundo",
+    "Gi": false,
+    "NoGi": true
+  },
+  {
+    "id": 3,
+    "position": "Bottom Side Control",
+    "offense": false,
+    "defense": true,
+    "technique": "Get frame in under their head, bridge hard, shrimp and get knee frame in, then re-guard",
+    "date": "June 9th",
+    "School": "Mallorca BJJ",
+    "teacher": "Scott",
+    "Gi": true,
+    "NoGi": false
+  }
+]
