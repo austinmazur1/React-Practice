@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 .bg-hero-image {
   background-image: url("src/assets/date-night-image copy.jpeg");
 }
