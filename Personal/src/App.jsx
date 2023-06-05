@@ -1,7 +1,8 @@
 import logs from "../db.json/";
 import { useState } from "react";
-import Card from "./components/Card";
+import LogCard from "./components/LogCard";
 import NavBar from "./components/NavBar";
+
 
 
 function App() {
@@ -32,7 +33,8 @@ const addLog = (newLog) => {
   return (
     <div>
       <NavBar displayForm={displayForm} showForm={showForm} addLog={addLog}/>
-      <Card bjjLogs={bjjLogs} handleClick={handleClick} />
+
+      <LogCard bjjLogs={bjjLogs} handleClick={handleClick} />
     </div>
   );
 }

@@ -3,52 +3,8 @@ import { Select, Textarea, TextInput, Button, Label } from "flowbite-react";
 import Datepicker from "tailwind-datepicker-react";
 
 const AddForm = ({ addLog, showForm, displayForm }) => {
-  
-  const [position, setPosition] = useState("");
-  const [offense, setOffense] = useState(false);
-  const [defense, setDefense] = useState(false);
-  const [technique, setTechnique] = useState("");
-  const [date, setDate] = useState(null);
-  const [school, setSchool] = useState("");
-  const [teacher, setTeacher] = useState("");
-  const [gi, setGi] = useState(false);
-  const [nogi, setNoGi] = useState(false);
-  const [show, setShow] = useState(false);
 
-  const handlePosition = (e) => setPosition(e.target.value);
-  const handleOffense = (e) => setOffense(e.target.value);
-  const handleDefense = (e) => setDefense(e.target.value);
-  const handleTechnique = (e) => setTechnique(e.target.value);
-  const handleDate = (e) => setDate(e.target.value);
-  const handleSchool = (e) => setSchool(e.target.value);
-  const handleTeacher = (e) => setTeacher(e.target.value);
-  const handleGi = (e) => setGi(e.target.value);
-  const handleNoGi = (e) => setNoGi(e.target.value);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const newLog = {
-      position,
-      offense,
-      defense,
-      technique,
-      date,
-      school,
-      teacher,
-      gi,
-      nogi,
-    };
-    console.log(newLog);
-    addLog(newLog);
-
-    setPosition("");
-    setTechnique("");
-    setDate(new Date());
-    setSchool("");
-    setTeacher("");
-  };
-
-  //Date Picker
+   //Date Picker
   const options = {
     title: "Date Trained",
     autoHide: true,
@@ -77,6 +33,58 @@ const AddForm = ({ addLog, showForm, displayForm }) => {
     language: "en",
   };
 
+  
+  const [position, setPosition] = useState("");
+  const [offense, setOffense] = useState(false);
+  const [defense, setDefense] = useState(false);
+  const [technique, setTechnique] = useState("");
+  const [date, setDate] = useState(options.defaultDate);
+  const [school, setSchool] = useState("");
+  const [teacher, setTeacher] = useState("");
+  const [gi, setGi] = useState(false);
+  const [nogi, setNoGi] = useState(false);
+  const [show, setShow] = useState(false);
+
+  const handlePosition = (e) => setPosition(e.target.value);
+  const handleOffense = (e) => setOffense(e.target.value);
+  const handleDefense = (e) => setDefense(e.target.value);
+  const handleTechnique = (e) => setTechnique(e.target.value);
+  const handleDate = (e) => {
+    const newDate = e
+    setDate(newDate.toDateString());
+  }
+  const handleSchool = (e) => setSchool(e.target.value);
+  const handleTeacher = (e) => setTeacher(e.target.value);
+  const handleGi = (e) => setGi(e.target.value);
+  const handleNoGi = (e) => setNoGi(e.target.value);
+
+
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const newLog = {
+      position,
+      offense,
+      defense,
+      technique,
+      date,
+      school,
+      teacher,
+      gi,
+      nogi,
+    };
+    console.log(newLog);
+    console.log(date)
+    addLog(newLog);
+
+    setPosition("");
+    setTechnique("");
+    setDate(new Date());
+    setSchool("");
+    setTeacher("");
+  };
+
+ 
   const handleClose = () => {
     setShow(!show);
   };
@@ -92,7 +100,7 @@ const AddForm = ({ addLog, showForm, displayForm }) => {
         </div>
         <Label htmlFor="offenseOrDefense" value="Offense or Defense?" />
         <Select id="offenseOrDefense" required>
-          <option onChange={(e) => handleDefense(e)} value={offense}>Offensive</option>
+          <option onChange={(e) => handleOffense(e)} value={offense}>Offensive</option>
           <option onChange={(e) => handleDefense(e)}>Defensive</option>
         </Select>
 
